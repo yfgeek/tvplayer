@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../pages/Home'
-import Player from '../components/Player'
+import Player from '../components/Player/Player'
 
 import NotFound from '../pages/NotFound'
 
