@@ -1,6 +1,5 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="t-player">
     <d-player :options="options"
               @play="play"
               ref="player">
@@ -14,15 +13,19 @@
 
   export default {
     name: 'Player',
+    props: {
+      channel:{
+        type: String
+      }
+    },
     data() {
       return {
-        msg: 'CCTV',
         options: {
           autoplay: false,
-          danmaku: true,
+          danmaku: false,
           live: true,
           video: {
-            url: 'http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8',
+            url: `http://ivi.bupt.edu.cn/hls/${this.$route.params.channel}.m3u8`,
             type: 'hls'
           },
         },
@@ -44,23 +47,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  a {
-    color: #42b983;
-  }
   .dplayer {
     width: 800px;
     margin: 50px auto;

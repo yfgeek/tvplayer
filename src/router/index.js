@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Player from '@/components/Player'
+import Home from '../components/Home'
+import Player from '../components/Player'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'CCTV1',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/live/:channel',
+      name: 'Player',
       component: Player
-    }
+    },
+
   ]
 })
