@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import ChannelList from './ChannelList';
+  import ChannelList from '../components/ChannelList';
   export default {
     name: "Home",
     components: {

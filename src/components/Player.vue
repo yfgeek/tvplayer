@@ -33,6 +33,10 @@
       }
     },
     mounted() {
+      // If not found then 404
+      if(!this.$route.params.channel){
+        this.$router.push('404')
+      }
       this.player = this.$refs.player.dp;
     },
     methods: {
