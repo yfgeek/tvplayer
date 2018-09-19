@@ -1,4 +1,4 @@
-import * as url from './config'
+import * as url from '../config'
 import axios from 'axios'
 
 // 直播

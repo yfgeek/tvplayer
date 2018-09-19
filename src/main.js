@@ -6,8 +6,10 @@ import router from './router'
 
 import store from './stores'
 
-
 Vue.config.productionTip = false;
+
+//  Moment.js 时间戳
+Vue.use(require('vue-moment'));
 
 /* eslint-disable no-new */
 new Vue({
@@ -17,3 +19,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 });
+Vue.moment.locale('zh-cn');
+
