@@ -13,11 +13,7 @@
 
   export default {
     name: 'Player',
-    props: {
-      channel:{
-        type: String
-      }
-    },
+    props: ['tChannel'],
     data() {
       return {
         options: {
@@ -25,7 +21,8 @@
           danmaku: false,
           live: true,
           video: {
-            url: `http://ivi.bupt.edu.cn/hls/${this.$route.params.channel}.m3u8`,
+            url: this.tChannel.url,
+            // url: `${URL.TV_SERVER_ROOT}/${this.$route.params.channel}.m3u8`,
             type: 'hls'
           },
         },
@@ -33,10 +30,6 @@
       }
     },
     mounted() {
-      // If not found then 404
-      if(!this.$route.params.channel){
-        this.$router.push('404')
-      }
       this.player = this.$refs.player.dp;
     },
     methods: {

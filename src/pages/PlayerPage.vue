@@ -1,12 +1,13 @@
 <template>
   <div>
-      <player :channel=channel></player>
+      <player-title :t-channel="channel"></player-title>
+      <player :t-channel="channel"></player>
       <history></history>
   </div>
 </template>
 
 <script>
-
+  import PlayerTitle from '../components/Player/PlayerTitle';
   import Player from '../components/Player/Player';
   import History from '../components/Player/History';
   import {HISTORY_ADD} from "../stores/actionTypes/historyType";
@@ -15,24 +16,23 @@
     name: "PlayerPage",
     data() {
       return {
-        channel: this.$route.params.channel,
-        history: this.$store.state.history,
+        channel: this.$store.getters.channelByName(this.$route.params.channel),
       }
     },
     created() {
-      let channel = this.$route.params.channel;
       // If not found then 404
-      if (!channel) {
-        this.$router.push('404')
+      if (!this.channel) {
+        this.$router.push('/404')
       }
       this.$store.commit(
         HISTORY_ADD,
         {
-          "channel": channel,
+          "channel": this.channel.url,
         }
       );
     },
     components: {
+      'player-title': PlayerTitle,
       'player': Player,
       'history': History,
     }

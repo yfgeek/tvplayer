@@ -4,6 +4,7 @@ import createPersistedState from 'vuex-persistedstate'
 
 import historyStore from "./modules/historyStore";
 import playerStore from "./modules/playerStore";
+import channelsStore from "./modules/channelsStore";
 
 Vue.use(Vuex);
 
@@ -22,6 +23,7 @@ export default new Vuex.Store({
   state,
   getters,
   modules: {
+    channelsStore,
     historyStore,
     playerStore,
   },
