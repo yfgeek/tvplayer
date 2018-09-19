@@ -5,7 +5,7 @@
 <script>
   import ChannelList from '../components/Home/ChannelList';
   export default {
-    name: "Home",
+    name: "HomePage",
     components: {
       't-channel-list': ChannelList
     }

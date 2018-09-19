@@ -7,4 +7,5 @@ export const playerApi = {
     return axios.get(url.player).then((response) => {
       return response.data
     })
-  };
+  }
+};

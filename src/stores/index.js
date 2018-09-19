@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import historyStore from "./modules/historyStore";
+import playerStore from "./modules/playerStore";
 
 Vue.use(Vuex);
 
@@ -18,5 +20,7 @@ export default new Vuex.Store({
 state,
 getters,
 modules: {
+  historyStore,
+  playerStore,
 }
 })

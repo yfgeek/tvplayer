@@ -26,6 +26,7 @@ const actions = {
 };
 
 const mutations = {
+  // 播放器
   [TYPE.PLAYER_REQUEST] (state) {
 
   },
@@ -35,7 +36,7 @@ const mutations = {
   },
   [TYPE.PLAYER_FAILURE] (state) {
 
-  }
+  },
 };
 
 export default {

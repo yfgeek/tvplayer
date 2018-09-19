@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../pages/Home'
-import Player from '../components/Player/Player'
+import HomePage from '../pages/HomePage'
+import PlayerPage from '../pages/PlayerPage'
 
-import NotFound from '../pages/NotFound'
+import NotFoundPage from '../pages/NotFoundPage'
 
 Vue.use(Router);
 
@@ -11,22 +11,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'HomePage',
+      component: HomePage
     },
     {
       path: '/live/:channel',
-      name: 'Player',
-      component: Player
+      name: 'PlayerPage',
+      component: PlayerPage
     },
     {
       path: '/404',
-      name: 'NotFound',
-      component: NotFound
+      name: 'NotFoundPage',
+      component: NotFoundPage
     },
     {
       path: '*',
-      component: NotFound,
+      component: NotFoundPage,
       meta: {
         title: '404未找到',
       },

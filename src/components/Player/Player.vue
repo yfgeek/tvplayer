@@ -1,5 +1,5 @@
 <template>
-  <div class="t-player">
+  <div id="player" class="t-player">
     <d-player :options="options"
               @play="play"
               ref="player">
