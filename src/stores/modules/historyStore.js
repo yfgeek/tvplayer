@@ -19,7 +19,7 @@ const mutations = {
     }
     state.history = [
       ...state.history, {
-        channel: payload.channel,
+        name: payload.name,
         uri: `/live/${payload.channel}`,
         timestamp: new Date().getTime(),
       }

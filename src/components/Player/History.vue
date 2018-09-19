@@ -3,7 +3,10 @@
     <button v-on:click="clearAllHistories">清空观看历史</button>
     <ul>
       <li v-for="item in recentHistories">
-        {{ item.channel }} - {{  item.timestamp | moment("from", "now") }}
+        <router-link :to="{ path : item.uri}">
+          {{item.name}}
+        </router-link>
+        - {{  item.timestamp | moment("from", "now") }}
       </li>
     </ul>
   </div>

@@ -27,7 +27,8 @@
       this.$store.commit(
         HISTORY_ADD,
         {
-          "channel": this.channel.url,
+          "name": this.channel.name,
+          "channel": this.channel.channel,
         }
       );
     },
