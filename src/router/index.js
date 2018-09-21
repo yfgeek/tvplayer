@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '../pages/HomePage'
 import PlayerPage from '../pages/PlayerPage'
-
+import SettingsPage from '../pages/SettingsPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
 Vue.use(Router);
@@ -13,6 +13,11 @@ export default new Router({
       path: '/',
       name: 'HomePage',
       component: HomePage
+    },
+    {
+      path: '/settings',
+      name: 'SettingsPage',
+      component: SettingsPage
     },
     {
       path: '/live/:channel',

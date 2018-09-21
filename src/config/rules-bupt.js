@@ -1,4 +1,4 @@
-export const RULES_BUPT =[
+export const RULES_BUPT = [
   {
     "name": "CCTV-1高清",
     "channel": "cctv1hd",

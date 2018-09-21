@@ -1,6 +1,6 @@
 <template>
   <div id="history">
-    <button v-on:click="clearAllHistories">清空观看历史</button>
+    <el-button type="danger" icon="el-icon-delete" circle  v-on:click="clearAllHistories"></el-button>
     <ul>
       <li v-for="item in recentHistories">
         <router-link :to="{ path : item.uri}">

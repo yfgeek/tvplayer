@@ -1,15 +1,19 @@
 <template>
-  <div id="player" class="t-player">
-    <d-player :options="options"
+  <div>
+    <d-player id="player" class="t-player"
+              :options="options"
               @play="play"
               ref="player">
     </d-player>
+    <history class="player_aside"></history>
   </div>
+
 </template>
 
 <script>
   import VueDPlayer from 'vue-dplayer'
   import 'vue-dplayer/dist/vue-dplayer.css'
+  import History from './History';
 
   export default {
     name: 'Player',
@@ -18,13 +22,19 @@
       return {
         options: {
           autoplay: false,
-          danmaku: false,
+          danmaku: true,
           live: true,
           video: {
             url: this.tChannel.url,
             // url: `${URL.TV_SERVER_ROOT}/${this.$route.params.channel}.m3u8`,
             type: 'hls'
           },
+          contextmenu: [
+            {
+              text: '虾鸡儿播',
+              link: '/'
+            }
+          ]
         },
         player: null,
       }
@@ -37,7 +47,8 @@
       },
     },
     components: {
-      'd-player': VueDPlayer
+      'd-player': VueDPlayer,
+      'history': History,
     }
   }
 </script>
@@ -45,7 +56,18 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .dplayer {
-    width: 800px;
-    margin: 50px auto;
+    max-width: 880px;
+  }
+
+  .player_container .player_aside {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    float: right;
+    width: 280px;
+    height: 100%;
+    background: #26262b;
+    color: #bbb;
   }
 </style>

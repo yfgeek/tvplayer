@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="item in channels">
-        <router-link
-          :to="{ path : '/live/' + item.channel}"
-          :channel-url= item.url
-          :channel-file= item.file
-          :channel-title= item.title
-        >
-          {{item.name}}
-        </router-link>
-      </li>
-    </ul>
-  </div>
+  <el-row >
+      <div v-for="item in channels">
+        <el-col :span="6">
+          <el-card class="channel_card" shadow="hover">
+            <router-link
+              :to="{ path : '/live/' + item.channel}"
+              :channel-url= item.url
+              :channel-file= item.file
+              :channel-title= item.title
+            >
+              {{item.name}}
+            </router-link>
+          </el-card>
+        </el-col>
+      </div>
+  </el-row >
 
 </template>
 
@@ -31,5 +33,7 @@
 </script>
 
 <style scoped>
-
+.channel_card{
+  margin:15px;
+}
 </style>

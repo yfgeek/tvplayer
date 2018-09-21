@@ -1,0 +1,1 @@
+export const CHANNEL_CHANGE = 'CHANNEL_CHANGE';
