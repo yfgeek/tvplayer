@@ -1,10 +1,10 @@
 <template>
   <ul class="nav">
     <li class="nav-item">
-      <router-link :to="{ path : '/'}" >首页</router-link>
+      <router-link :to="{ path : '/'}"  @click.native="refresh">首页</router-link>
     </li>
     <li class="nav-item">
-      <router-link :to="{ path : '/live'}" >直播</router-link>
+      <router-link :to="{ path : '/live/*'}" >直播</router-link>
     </li>
     <li class="nav-item">
       <router-link :to="{ path : '/catalog'}" >分类</router-link>
@@ -20,7 +20,13 @@
 
 <script>
     export default {
-        name: "Nav"
+        name: "Nav",
+        methods:{
+          // TODO 需要完善，目前通过刷新临时解决 dplayher在销毁组件后继续通过hls发生xhr请求
+          refresh(){
+            this.$router.go(0);
+          }
+        }
     }
 </script>
 

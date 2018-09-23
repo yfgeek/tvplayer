@@ -16,7 +16,7 @@ export default {
   name: 'App',
   created(){
     this.$moment.locale('zh-cn');
-  }
+  },
 }
 </script>
 

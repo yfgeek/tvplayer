@@ -24,6 +24,8 @@
 
     export default {
         name: "ChannelList",
+        methods:{
+        },
         computed: {
         ...mapGetters([
           'channels'
