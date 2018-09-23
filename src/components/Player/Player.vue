@@ -22,7 +22,7 @@
       return {
         options: {
           autoplay: false,
-          danmaku: true,
+          danmaku: false,
           live: true,
           video: {
             url: this.tChannel.url,
@@ -41,6 +41,9 @@
     },
     mounted() {
       this.player = this.$refs.player.dp;
+    },
+    beforeDestroy(){
+      this.player.pause();
     },
     methods: {
       play() {

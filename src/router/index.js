@@ -12,28 +12,33 @@ export default new Router({
     {
       path: '/',
       name: 'HomePage',
-      component: HomePage
+      component: HomePage,
+      meta: {keepAlive: true}
     },
     {
       path: '/settings',
       name: 'SettingsPage',
-      component: SettingsPage
+      component: SettingsPage,
+      meta: {keepAlive: true}
     },
     {
       path: '/live/:channel',
       name: 'PlayerPage',
-      component: PlayerPage
+      component: PlayerPage,
+      meta: {keepAlive: false}
     },
     {
       path: '/404',
       name: 'NotFoundPage',
-      component: NotFoundPage
+      component: NotFoundPage,
+      meta: {keepAlive: true}
     },
     {
       path: '*',
       component: NotFoundPage,
       meta: {
         title: '404未找到',
+        keepAlive: true,
       },
     },
 

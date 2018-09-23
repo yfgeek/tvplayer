@@ -3,7 +3,6 @@
     <h1>
       <span class="player-title">{{tChannel.name}}</span>
       <el-rate
-        v-model="value2"
         :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
       </el-rate>
     </h1>
