@@ -5,7 +5,7 @@
               @play="play"
               ref="player">
     </d-player>
-    <history class="player_aside"></history>
+    <chatbox class="player_aside"></chatbox>
   </div>
 
 </template>
@@ -13,7 +13,7 @@
 <script>
   import VueDPlayer from 'vue-dplayer'
   import 'vue-dplayer/dist/vue-dplayer.css'
-  import History from './History';
+  import ChatBox from './ChatBox';
 
   export default {
     name: 'Player',
@@ -51,7 +51,7 @@
     },
     components: {
       'd-player': VueDPlayer,
-      'history': History,
+      'chatbox': ChatBox,
     }
   }
 </script>

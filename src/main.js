@@ -7,12 +7,14 @@ import store from './stores'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import Chat from 'vue-beautiful-chat'
 
 Vue.config.productionTip = false;
 
 //  Moment.js 时间戳
 Vue.use(require('vue-moment'));
 Vue.use(ElementUI);
+Vue.use(Chat);
 
 /* eslint-disable no-new */
 new Vue({
