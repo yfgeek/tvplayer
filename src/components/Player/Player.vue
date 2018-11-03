@@ -5,7 +5,6 @@
               @play="play"
               ref="player">
     </d-player>
-    <chatbox class="player_aside"></chatbox>
   </div>
 
 </template>
@@ -13,7 +12,6 @@
 <script>
   import VueDPlayer from 'vue-dplayer'
   import 'vue-dplayer/dist/vue-dplayer.css'
-  import ChatBox from './ChatBox';
 
   export default {
     name: 'Player',
@@ -51,7 +49,6 @@
     },
     components: {
       'd-player': VueDPlayer,
-      'chatbox': ChatBox,
     }
   }
 </script>
